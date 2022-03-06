@@ -1,0 +1,54 @@
+.footer {
+  background-color: #f3f9ff;
+	border-top: 2px solid rgba(153, 153, 153, 0.46);
+
+  .container {
+    height: 100%;
+    display: flex;
+    padding: 0px 100px;
+    justify-content: center;
+  }
+
+  &__content {
+    display: flex;
+		justify-content: center;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      padding: 35px;
+			max-width: 20%;
+
+      &:nth-child(2) {
+        border-left: 2px solid rgba(153, 153, 153, 0.46);
+				border-right: 2px solid rgba(153, 153, 153, 0.46);
+      }
+
+      &__title {
+        font-family: Noto Sans;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 30px;
+        letter-spacing: -0.3px;
+				color: #181949;
+				margin-bottom: 20px;
+      }
+
+      &__address,
+      &__business,
+      &__copyright,
+      &__tel-web__tel,
+      &__tel-web__website {
+        font-family: Noto Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: -0.204545px;
+				color: #666666;
+				margin-bottom: 10px;
+      }
+    }
+  }
+}

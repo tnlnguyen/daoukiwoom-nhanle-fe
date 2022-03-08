@@ -84,36 +84,39 @@ const NavBar = () => {
         <div className="container">
           <div className="navbar__right__container">
             <div className="navbar__right__container__dropdown">
-              {dropDownList.map((item) => {
+              {dropDownList.map((item, index) => {
                 return (
-                  <>
-                    <div className="navbar__right__container__dropdown__text">
-                      {item.title} {item.icon}
-                    </div>
-                  </>
+                  <div
+                    key={index}
+                    className="navbar__right__container__dropdown__text"
+                  >
+                    {item.title} {item.icon}
+                  </div>
                 );
               })}
             </div>
 
             <div className="navbar__right__container__service">
               <div className="navbar__right__container__service__home">
-                {homeList.map((item) => {
+                {homeList.map((item, index) => {
                   return (
-                    <>
-                      <div className="navbar__right__container__service__home__item">
-                        {item?.icon} {item?.title}
-                      </div>
-                    </>
+                    <div
+                      key={index}
+                      className="navbar__right__container__service__home__item"
+                    >
+                      {item?.icon} {item?.title}
+                    </div>
                   );
                 })}
               </div>
-              {serviceList.map((item) => {
+              {serviceList.map((item, index) => {
                 return (
-                  <>
-                    <div className="navbar__right__container__service__item">
-                      {item?.icon} {item?.title}
-                    </div>
-                  </>
+                  <div
+                    key={index}
+                    className="navbar__right__container__service__item"
+                  >
+                    {item?.icon} {item?.title}
+                  </div>
                 );
               })}
             </div>
@@ -145,18 +148,19 @@ const NavBar = () => {
                       </div>
                     </div>
                   </>
-                  {partnerList.map((item) => {
+                  {partnerList.map((item, index) => {
                     return (
-                      <>
-                        <div className="navbar__right__container__info__partner__number__item">
-                          <div className="navbar__right__container__info__partner__number__item__quantity">
-                            {item?.quantity}
-                          </div>
-                          <div className="navbar__right__container__info__partner__number__item__title">
-                            {item?.title}
-                          </div>
+                      <div
+                        key={index}
+                        className="navbar__right__container__info__partner__number__item"
+                      >
+                        <div className="navbar__right__container__info__partner__number__item__quantity">
+                          {item?.quantity}
                         </div>
-                      </>
+                        <div className="navbar__right__container__info__partner__number__item__title">
+                          {item?.title}
+                        </div>
+                      </div>
                     );
                   })}
                 </div>

@@ -40,20 +40,30 @@ const Footer = () => {
       <section className="footer">
         <div className="container">
           <div className="footer__content">
-            {data.map((item) => {
+            {data.map((item, index) => {
               return (
-                <>
-                  <div className="footer__content__item">
-                    <div className="footer__content__item__title">{item.title}</div>
-                    <div className="footer__content__item__address">{item.address}</div>
-                    <div className="footer__content__item__business">{item?.businessRegistration}</div>
-                    <div className="footer__content__item__tel-web">
-                      <div className="footer__content__item__tel-web__tel">{item?.tel}</div>
-                      <div className="footer__content__item__tel-web__website">{item?.website}</div>
-                    </div>
-                    <div className="footer__content__item__copyright">{item?.copyright}</div>
+                <div key={index} className="footer__content__item">
+                  <div className="footer__content__item__title">
+                    {item.title}
                   </div>
-                </>
+                  <div className="footer__content__item__address">
+                    {item.address}
+                  </div>
+                  <div className="footer__content__item__business">
+                    {item?.businessRegistration}
+                  </div>
+                  <div className="footer__content__item__tel-web">
+                    <div className="footer__content__item__tel-web__tel">
+                      {item?.tel}
+                    </div>
+                    <div className="footer__content__item__tel-web__website">
+                      {item?.website}
+                    </div>
+                  </div>
+                  <div className="footer__content__item__copyright">
+                    {item?.copyright}
+                  </div>
+                </div>
               );
             })}
           </div>

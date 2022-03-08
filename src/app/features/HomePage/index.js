@@ -16,7 +16,7 @@ const HomePage = () => {
 
   useEffect(() => {
     if (!user) {
-      history.replace("/login");
+      history?.replace("/login");
       return;
     }
 

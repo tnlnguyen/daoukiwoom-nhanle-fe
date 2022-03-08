@@ -125,9 +125,9 @@ const Industry = () => {
           </div>
 
           <div className="industry__content__values">
-            {values.map((item) => {
+            {values.map((item, index) => {
               return (
-                <div className="industry__content__values__item">
+                <div key={index} className="industry__content__values__item">
                   <div className="industry__content__values__item__image">
                     {item.image}
                   </div>
@@ -137,18 +137,19 @@ const Industry = () => {
                       {item.data.title}
                     </div>
                     <div className="industry__content__values__item__content__detail">
-                      {item.data.detail.map((subItem) => {
+                      {item.data.detail.map((subItem, subIndex) => {
                         return (
-                          <>
-                            <div className="industry__content__values__item__content__detail__sub-item">
-                              <div className="industry__content__values__item__content__detail__sub-item__description">
-                                {subItem.description}
-                              </div>
-                              <div className="industry__content__values__item__content__detail__sub-item__key">
-                                {subItem.key}
-                              </div>
+                          <div
+                            key={subIndex}
+                            className="industry__content__values__item__content__detail__sub-item"
+                          >
+                            <div className="industry__content__values__item__content__detail__sub-item__description">
+                              {subItem.description}
                             </div>
-                          </>
+                            <div className="industry__content__values__item__content__detail__sub-item__key">
+                              {subItem.key}
+                            </div>
+                          </div>
                         );
                       })}
                     </div>

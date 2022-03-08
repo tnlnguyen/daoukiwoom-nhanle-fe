@@ -37,56 +37,51 @@ const data = [
 ];
 
 const Service = () => {
-  const { formatMessage } = useIntl();
-  const history = useHistory();
-  const dispatch = useDispatch();
-
-  useEffect(() => {}, []);
-
   return (
     <>
       <section className="service">
         <div className="container">
           <div className="service__content">
-            {data.map((item) => {
+            {data.map((item, index) => {
               return (
-                <>
-                  <div className={`service__content__item ${item?.style}`}>
+                <div
+                  key={index}
+                  className={`service__content__item ${item?.style}`}
+                >
+                  <div
+                    className={`service__content__item__title service__content__item__title${item?.textColor}`}
+                  >
+                    {item.title}
+                  </div>
+                  <div
+                    className={`service__content__item__description service__content__item__description${item?.textColor}`}
+                  >
+                    {item.description}
+                  </div>
+                  <div className="service__content__item__price">
                     <div
-                      className={`service__content__item__title service__content__item__title${item?.textColor}`}
+                      className={
+                        item.price == 0
+                          ? `service__content__item__price__number--zero service__content__item__price__number${item?.textColor}`
+                          : `service__content__item__price__number service__content__item__price__number${item?.textColor}`
+                      }
                     >
-                      {item.title}
+                      {item.price}
                     </div>
-                    <div
-                      className={`service__content__item__description service__content__item__description${item?.textColor}`}
-                    >
-                      {item.description}
-                    </div>
-                    <div className="service__content__item__price">
+                    <div className="service__content__item__price__unit">
                       <div
-                        className={
-                          item.price == 0
-                            ? `service__content__item__price__number--zero service__content__item__price__number${item?.textColor}`
-                            : `service__content__item__price__number service__content__item__price__number${item?.textColor}`
-                        }
+                        className={`service__content__item__price__unit__symbol service__content__item__price__unit__symbol${item?.textColor}`}
                       >
-                        {item.price}
+                        {item.symbol}
                       </div>
-                      <div className="service__content__item__price__unit">
-                        <div
-                          className={`service__content__item__price__unit__symbol service__content__item__price__unit__symbol${item?.textColor}`}
-                        >
-                          {item.symbol}
-                        </div>
-                        <div
-                          className={`service__content__item__price__unit__text service__content__item__price__unit__text${item?.textColor}`}
-                        >
-                          Per month
-                        </div>
+                      <div
+                        className={`service__content__item__price__unit__text service__content__item__price__unit__text${item?.textColor}`}
+                      >
+                        Per month
                       </div>
                     </div>
                   </div>
-                </>
+                </div>
               );
             })}
           </div>
